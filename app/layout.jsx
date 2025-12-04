@@ -15,9 +15,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <body className={`${poppins.variable} antialiased no-scrollbar`}>
-        <Header /> {children}
+        <Header />
+        {children}
       </body>
     </html>
   );
