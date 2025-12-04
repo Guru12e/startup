@@ -67,14 +67,18 @@ export const navItems = [
   },
   {
     name: "Events",
-    href: "/events",
+    href: "/events/upcoming",
     icon: <Home />,
     subItems: [
-      { name: "Upcoming", href: "/events/upcoming" },
-      { name: "Workshops", href: "/events/workshops" },
-      { name: "Group Meetings", href: "/events/group-meetings" },
-      { name: "Office Hours", href: "/events/office-hours" },
-      { name: "My Events", href: "/events/my-events" },
+      { name: "Upcoming", href: "/events/upcoming", icon: Home },
+      { name: "Workshops", href: "/events/workshops", icon: Home },
+      {
+        name: "Group Meetings",
+        href: "/events/group-meetings",
+        icon: Home,
+      },
+      { name: "Office Hours", href: "/events/office-hours", icon: Home },
+      { name: "My Events", href: "/events/my-events", icon: Home },
     ],
   },
   {

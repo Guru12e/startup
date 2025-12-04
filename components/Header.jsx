@@ -45,7 +45,7 @@ const Header = () => {
                 key={sub.name}
                 className={`px-5 py-3 flex tex-center w-full rounded-md items-center justify-center text-xs hover:bg-white/5 hover:text-white transition-all ${
                   pathName === sub.href ? "bg-[#4A47A3] text-white" : ""
-                }`}
+                } ${sub.name === "Home" && "hidden"}`}
               >
                 {sub.name}
               </Link>
