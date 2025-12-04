@@ -2,6 +2,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { IoMdSettings } from "react-icons/io";
 import MatchTabs from "./MatchTabs";
+import DetailsCard from "./DetailsCard";
 
 const PerfectMatch = () => {
   const events = [
@@ -42,7 +43,7 @@ const PerfectMatch = () => {
 
   return (
     <div className="w-full bg-linear-to-b from-[#ffffff]/15 to-transparent min-h-screen px-3 md:px-5">
-      <div className="w-full flex flex-col-reverse md:flex-row gap-5 mx-auto max-w-[1400px]">
+      <div className="w-full flex flex-col-reverse md:flex-row gap-10 mx-auto max-w-[1400px]">
         <div className="w-full md:w-[27%] py-10 flex flex-col gap-3">
           <div className="w-full flex items-center justify-between">
             <h4 className="text-[#AFC5E8]/80 font-bold text-md">Explore</h4>
@@ -151,6 +152,7 @@ const PerfectMatch = () => {
           </div>
           <div className="w-full h-1.5 bg-[#5F7495]/20"></div>
           <MatchTabs />
+          <DetailsCard />
         </div>
       </div>
     </div>

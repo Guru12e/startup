@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import PerfectMatch from "@/components/PerfectMatch";
-import React from "react";
 
 const Home = () => {
   return (

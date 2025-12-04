@@ -6,6 +6,7 @@ import { Textarea } from "./ui/textarea";
 import { Command, CommandInput } from "./ui/command";
 import { CommandList } from "cmdk";
 import SkillsInput from "./SkillsInput";
+import { ArrowRight } from "lucide-react";
 
 const MatchTabs = () => {
   const [index, setIndex] = useState(0);
@@ -16,6 +17,12 @@ const MatchTabs = () => {
   const [open, setOpen] = useState(false);
   const optionRef = useRef(null);
   const [position, setPosition] = useState("bottom");
+  const [advisors, setAdvisors] = useState([]);
+  const [subAdvisors, setSubAdvisors] = useState([]);
+  const [talent, setTalent] = useState([]);
+  const [subTalent, setSubTalent] = useState([]);
+  const [coFounders, setCoFounders] = useState([]);
+  const [subCoFounders, setSubCoFounders] = useState([]);
 
   const tabs = ["Investors", "Advisors", "Talent", "Co-Founders"];
 
@@ -40,6 +47,12 @@ const MatchTabs = () => {
       }
     }
   }, [open]);
+
+  const all = [
+    [...advisors, ...subAdvisors],
+    [...talent, ...subTalent],
+    [...coFounders, ...subCoFounders],
+  ];
 
   return (
     <div className="w-full flex justify-center items-center">
@@ -177,28 +190,97 @@ const MatchTabs = () => {
                 </div>
               </>
             )}
-            {index !== 0 && <SkillsInput />}
+
+            {index === 1 && (
+              <SkillsInput
+                selectedMain={advisors}
+                selectedSkills={subAdvisors}
+                setSelectedMain={setAdvisors}
+                setSelectedSkills={setSubAdvisors}
+              />
+            )}
+            {index === 2 && (
+              <SkillsInput
+                selectedMain={talent}
+                selectedSkills={subTalent}
+                setSelectedMain={setTalent}
+                setSelectedSkills={setSubTalent}
+              />
+            )}
+            {index === 3 && (
+              <SkillsInput
+                selectedMain={coFounders}
+                selectedSkills={subCoFounders}
+                setSelectedMain={setCoFounders}
+                setSelectedSkills={setSubCoFounders}
+              />
+            )}
           </div>
 
-          <div className="flex flex-col w-full max-md:aspect-square py-5 md:w-1/2 bg-[#4A47A3] px-3 rounded-lg items-center justify-center">
-            <h3 className="text-transparent text-center bg-linear-to-r from-[#D97258] to-[#9858A3] bg-clip-text text-3xl font-extrabold">
-              {index === 0
-                ? "Raise Capital 10x Faster"
-                : index === 2
-                ? "Build your Startup Dream Team"
-                : `Find the Perfect Advisor ${
-                    index === 1 ? "Advisor" : "Co-Founder"
-                  }`}
-            </h3>
-            <p className="text-lg mt-2 font-semibold text-[#FECFC7]/90 text-center">
-              {index === 0
-                ? "Directly Pitch perfectly matched Investors"
-                : "Find Startup-Obsessed Co-Founders, Experts, Peers, and Talent"}
-            </p>
-            <button className="mt-5 w-max px-6 py-3 text-sm bg-[#EF901D] rounded-full text-black border border-white/10 font-bold">
-              Learn More
-            </button>
-          </div>
+          {index === 0 ||
+          (index === 1 && advisors.length === 0) ||
+          (index === 2 && talent.length === 0) ||
+          (index === 3 && coFounders.length === 0) ? (
+            <div className="flex flex-col w-full max-md:aspect-square py-5 md:w-1/2 bg-[#4A47A3] px-3 rounded-lg items-center justify-center">
+              <h3 className="text-transparent max-w-xs text-center bg-linear-to-r from-[#D97258] to-[#9858A3] bg-clip-text text-3xl font-extrabold">
+                {index === 0
+                  ? "Raise Capital 10x Faster"
+                  : index === 2
+                  ? "Build your Startup Dream Team"
+                  : `Find the Perfect ${
+                      index === 1 ? "Advisor" : "Co-Founder"
+                    }`}
+              </h3>
+              <p className="text-lg mt-2 font-semibold text-[#FECFC7]/90 text-center">
+                {index === 0
+                  ? "Directly Pitch perfectly matched Investors"
+                  : "Find Startup-Obsessed Co-Founders, Experts, Peers, and Talent"}
+              </p>
+              <button className="mt-5 w-max px-6 py-3 text-sm bg-[#EF901D] rounded-full text-black border border-white/10 font-bold">
+                Learn More
+              </button>
+            </div>
+          ) : (
+            <div className="bg-[#212141] p-4 rounded-lg w-full md:w-1/2 flex flex-col gap-4">
+              <div className="hidden md:flex flex-col w-full py-5 bg-[#4A47A3] min-h-[200px] px-5 rounded-lg items-center justify-center">
+                <h3 className="text-[#C6CEDA] text-xl font-normal text-center">
+                  Looking for an{" "}
+                  <span className="font-bold text-white">
+                    {index === 1
+                      ? "advisor"
+                      : index === 2
+                      ? "talent"
+                      : "co-founder"}{" "}
+                  </span>
+                  who can help with{" "}
+                  <span className="font-bold text-white">
+                    {all[index - 1].join(", ")}
+                  </span>
+                  .
+                </h3>
+              </div>
+              <div className="flex flex-col mt-1">
+                <h3 className="text-[#C6CEDA] text-md font-bold text-center">
+                  Good news! You have{" "}
+                  <span className="bg-[#A14B3F] mx-1 px-2 py-1 rounded-full">
+                    1,025
+                  </span>{" "}
+                  potential matches.
+                </h3>
+                <div className="hidden md:flex flex-wrap w-[90%] items-center mx-auto gap-1 justify-center mt-3">
+                  {[...Array(24)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="bg-white rounded-full w-9 aspect-square relative"
+                    ></div>
+                  ))}
+                </div>
+                <button className="mt-5 px-6 py-3 text-md bg-[#EF901D] rounded-full text-black border border-white/10 font-bold flex gap-2 justify-center items-center">
+                  View Matches <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

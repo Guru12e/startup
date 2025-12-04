@@ -74,21 +74,21 @@ export default function Hero() {
                 ))}
               </CarouselContent>
 
-              <div className="top-[105%] w-[50%] relative flex items-center justify-between mx-auto">
-                <CarouselPrevious />
+              <div className="mt-5 w-max relative flex items-center justify-between mx-auto">
+                <CarouselPrevious className="border-0 bg-transparent hover:bg-transparent hover:text-white" />
                 <div className="flex justify-center flex-1 items-center gap-3">
                   {["fund", "customer", "product"].map((_, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick(i)}
                       className={cn(
-                        "h-3 w-3 rounded-full hover:bg-white transition",
+                        "h-1.5 w-1.5 rounded-full hover:bg-white transition",
                         current === i + 1 ? "bg-white" : "bg-white/40"
                       )}
                     />
                   ))}
                 </div>
-                <CarouselNext />
+                <CarouselNext className="border-0 bg-transparent hover:bg-transparent hover:text-white" />
               </div>
             </Carousel>
           </div>

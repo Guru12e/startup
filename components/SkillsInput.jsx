@@ -97,9 +97,12 @@ const extraSkillsMap = {
   ],
 };
 
-export default function SkillsInput() {
-  const [selectedMain, setSelectedMain] = useState([]);
-  const [selectedSkills, setSelectedSkills] = useState([]);
+export default function SkillsInput({
+  selectedMain,
+  selectedSkills,
+  setSelectedMain,
+  setSelectedSkills,
+}) {
   const [query, setQuery] = useState("");
 
   const allExtraSkills = useMemo(() => {
