@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const Slider = () => {
   return (
-    <div className="w-[90%] mx-auto relative">
+    <div>
       <Marquee
-        className="w-[90%]"
+        className=""
         speed={30}
         direction="left"
         style={{

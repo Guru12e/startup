@@ -68,7 +68,7 @@ export default function SubRootLayout({ children }) {
             </div>
           </header>
 
-          <div>{children}</div>
+          <div className="w-full relative overflow-hidden">{children}</div>
         </SidebarInset>
       </SidebarProvider>
     </div>
