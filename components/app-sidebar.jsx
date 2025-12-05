@@ -42,17 +42,13 @@ export function AppSidebar({ ...props }) {
       href: "/experts",
       icon: IoMdBulb,
     };
-  }
-
-  if (pathname === "/founders") {
+  } else if (pathname === "/founders") {
     subActiveSection = {
       name: "Founders",
       href: "/founders",
       icon: BookA,
     };
-  }
-
-  if (pathname === "/posts") {
+  } else if (pathname === "/posts") {
     subActiveSection = {
       name: "Answers",
       href: "/posts",
