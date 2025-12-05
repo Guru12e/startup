@@ -132,3 +132,33 @@ export const navItems1 = [
     href: "/login",
   },
 ];
+
+export const courses = [
+  {
+    name: "Finding Investors",
+    href: "/education/courses/finding-investors",
+    color: "#118A8B",
+  },
+  {
+    name: "How Funding Works",
+    href: "/education/courses/how-funding-works",
+  },
+  {
+    name: "Pitch Deck Bootcamp",
+    href: "/education/courses/pitch-deck-bootcamp",
+    para: "This course will guide you through defining the key information you'll need to build a Pitch Deck for your startup.",
+  },
+  {
+    name: "Pitching Investors",
+    href: "/education/courses/pitching-investors",
+  },
+  {
+    name: "Product MVP",
+    href: "/education/courses/product-mvp",
+  },
+  {
+    name: "Idea Validation Bootcamp",
+    href: "/education/courses/idea-validation-bootcamp",
+    para: "This course will walk you through the steps to evaluate your startup idea: research, expert validation, customer discovery, and crafting an elevator pitch.",
+  },
+];
