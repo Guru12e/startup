@@ -16,7 +16,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
-import { Bell, BookA, ChevronDown } from "lucide-react";
+import { Bell, BookA, ChevronDown, PackageSearch } from "lucide-react";
 import { IoMdBulb } from "react-icons/io";
 
 export function AppSidebar({ ...props }) {
@@ -51,6 +51,15 @@ export function AppSidebar({ ...props }) {
       icon: BookA,
     };
   }
+
+  if (pathname === "/posts") {
+    subActiveSection = {
+      name: "Answers",
+      href: "/posts",
+      icon: PackageSearch,
+    };
+  }
+
   return (
     <Sidebar className="p-0" variant="inset" {...props}>
       <SidebarHeader></SidebarHeader>
