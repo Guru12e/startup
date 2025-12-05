@@ -16,7 +16,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
-import { Bell, ChevronDown } from "lucide-react";
+import { Bell, BookA, ChevronDown } from "lucide-react";
+import { IoMdBulb } from "react-icons/io";
 
 export function AppSidebar({ ...props }) {
   const pathname = usePathname();
@@ -39,7 +40,15 @@ export function AppSidebar({ ...props }) {
     subActiveSection = {
       name: "Experts",
       href: "/experts",
-      icon: Bell,
+      icon: IoMdBulb,
+    };
+  }
+
+  if (pathname === "/founders") {
+    subActiveSection = {
+      name: "Founders",
+      href: "/founders",
+      icon: BookA,
     };
   }
   return (

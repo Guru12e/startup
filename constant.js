@@ -102,8 +102,8 @@ export const navItems = [
     icon: <Home />,
     subItems: [
       { name: "Matching", href: "/members/matching" },
-      { name: "Founders", href: "/members/founders" },
-      { name: "Experts", href: "/members/experts", icon: Home },
+      { name: "Founders", href: "/founders" },
+      { name: "Experts", href: "/experts", icon: Home },
     ],
   },
   {
