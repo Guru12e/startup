@@ -16,7 +16,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
-import { ChevronDown } from "lucide-react";
+import { Bell, ChevronDown } from "lucide-react";
 
 export function AppSidebar({ ...props }) {
   const pathname = usePathname();
@@ -31,10 +31,17 @@ export function AppSidebar({ ...props }) {
     (item) => item.href === activeBase || pathname.startsWith(item.href + "/")
   );
 
-  const subActiveSection = activeSection?.subItems?.find(
+  let subActiveSection = activeSection?.subItems?.find(
     (sub) => sub.href === pathname
   );
 
+  if (pathname === "/experts") {
+    subActiveSection = {
+      name: "Experts",
+      href: "/experts",
+      icon: Bell,
+    };
+  }
   return (
     <Sidebar className="p-0" variant="inset" {...props}>
       <SidebarHeader></SidebarHeader>
