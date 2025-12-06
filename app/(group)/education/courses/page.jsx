@@ -10,7 +10,7 @@ const CoursesPage = () => {
           <div
             key={index}
             className={`${
-              index % 2 === 0 ? "bg-gradient-to-br" : "bg-gradient-to-bl"
+              index % 2 === 0 ? "bg-linear-to-br" : "bg-linear-to-bl"
             } from-black/10 via-black/15 ${
               course.gradient
             } text-white p-20 rounded-xl w-full aspect-video flex gap-4`}
