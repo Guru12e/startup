@@ -1,5 +1,6 @@
 import EducationCarousel from "@/components/EducationCarousel";
 import Slider from "@/components/Slider";
+import { courses } from "@/constant";
 import {
   Book,
   ChevronRight,
@@ -58,20 +59,20 @@ const EducationPage = () => {
           image="/images/courses-1.png"
           button="Explore All Courses"
         />
-        <div className="grid grid-cols-2 xl:grid-cols-3 gap-5">
-          {[...Array(6)].map((_, idx) => (
-            <div key={idx} className="w-full aspect-3/4 relative group">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-5">
+          {courses.map((course, idx) => (
+            <div key={idx} className="w-full hover:scale-120 cursor-pointer leading-[1.2] px-2 hover:rounded-xl overflow-hidden transition-all aspect-3/4 relative group">
               <Image
-                src={`/images/book.png`}
+                src={course.image}
                 alt={`course-card-${idx + 1}`}
                 fill
                 className="object-contain"
               />
               <div className="absolute bottom-0 w-full h-full top-0 left-0 right-0 backdrop-blur-3xl flex flex-col justify-center items-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-white font-bold text-lg">Course Title</h4>
-                <p className="text-white/70 text-sm mt-2 text-center">
-                  A brief description of the course content goes here.
-                </p>
+              <h4 className="text-white font-bold text-center text-lg">{course.name}</h4>
+                <button style={{background: course.color}} className={`mt-2 px-4 py-2 bg-[${course.color}] text-white flex gap-2 items-center justify-center rounded-full text-sm font-bold`}>Start Course
+                  <ChevronRight size={16} />
+                </button>
               </div>
             </div>
           ))}
@@ -126,7 +127,7 @@ const EducationPage = () => {
       <div className="w-[90%] relative mx-auto overflow-hidden">
         <Slider />
       </div>
-      <div className="relative px-6 md:px-10 xl:px-20 pt-0 mx-auto my-10">
+      <div className="relative px-6 md:px-10 xl:px-20 pt-0 pb-10 mx-auto">
         <EducationCarousel slides={Array(8)} title="Popular Videos" />
       </div>
     </div>

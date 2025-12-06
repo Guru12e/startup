@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -9,7 +9,6 @@ import {
 
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuAction,
   SidebarMenuButton,
@@ -18,7 +17,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
-import { cn } from "@/lib/utils";
 
 export function NavMain({ active, items = [] }) {
   return (
@@ -30,17 +28,17 @@ export function NavMain({ active, items = [] }) {
             asChild
             defaultOpen={item.name === active?.name}
           >
-            <SidebarMenuItem className="hover:bg-white/10">
+            <SidebarMenuItem className='hover:bg-white/10'>
               <SidebarMenuButton
                 data-active={item.name === active?.name}
-                className="rounded-md hover:bg-white/10 hover:text-white"
+                className='rounded-md hover:bg-white/10 hover:text-white'
                 asChild
               >
                 <a
                   href={item.href}
                   className={`flex items-center text-sm font-semibold text-[#B9B7FF]/60 gap-2 `}
                 >
-                  {item.icon && <item.icon className="h-4 w-4" />}
+                  {item.icon && <item.icon className='h-4 w-4' />}
                   <span>{item.name}</span>
                 </a>
               </SidebarMenuButton>
@@ -48,26 +46,31 @@ export function NavMain({ active, items = [] }) {
               {item.items?.length > 0 && (
                 <>
                   <CollapsibleTrigger asChild>
-                    <SidebarMenuAction className="data-[state=open]:rotate-90 hover:bg-transparent text-white">
-                      <ChevronRight className="h-4 w-4 text-white" />
-                      <span className="sr-only">Toggle</span>
+                    <SidebarMenuAction className='data-[state=open]:rotate-90 hover:bg-transparent text-white'>
+                      <ChevronRight className='h-4 w-4 text-white' />
+                      <span className='sr-only'>Toggle</span>
                     </SidebarMenuAction>
                   </CollapsibleTrigger>
 
                   <CollapsibleContent>
                     <SidebarMenuSub>
-                      {item.items.map((subItem) => (
-                        <SidebarMenuSubItem key={subItem.name}>
-                          <SidebarMenuSubButton asChild>
-                            <a
-                              href={subItem.href}
-                              className="text-xs font-bold text-white/50"
+                      {item.items.map((subItem) => {
+                        return (
+                          <SidebarMenuSubItem key={subItem.name}>
+                            <SidebarMenuSubButton
+                              asChild
+                              className={subItem.colorType}
                             >
-                              {subItem.name}
-                            </a>
-                          </SidebarMenuSubButton>
-                        </SidebarMenuSubItem>
-                      ))}
+                              <a
+                                href={subItem.href}
+                                className='text-xs font-bold text-white/50'
+                              >
+                                {subItem.name}
+                              </a>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        );
+                      })}
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </>

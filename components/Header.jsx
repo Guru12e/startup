@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <div className="bg-[#1A1B20] fixed top-0 right-0 left-0 h-max w-screen px-2 flex items-center justify-between border-b border-b-black z-50">
       <div className="flex gap-2">
-        <Sheet>
+        <Sheet >
           <SheetTrigger asChild>
             <button className="text-white">
               <Menu />
@@ -67,7 +67,7 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent
             side="left"
-            className="bg-[#1A1B20] border-0 h-full overflow-y-scroll w-3/4 md:w-1/4 p-0"
+            className="bg-[#1A1B20] no-scrollbar border-0 h-full overflow-y-scroll w-3/4 md:w-1/4 p-0"
           >
             <SheetHeader className="p-4">
               <Link

@@ -7,6 +7,60 @@ import {
   BookOpen,
 } from "lucide-react";
 
+export const courses = [
+  {
+    name: "Idea Validation Bootcamp",
+    href: "/education/courses/idea-validation-bootcamp",
+    para: "This course will walk you through the steps to evaluate your startup idea: research, expert validation, customer discovery, and crafting an elevator pitch.",
+    color: "#10898b",
+    gradient: "to-[#10898b]/40",
+    colorType: "hover:bg-course-idea",
+    image: "/images/course2.png",
+  },
+  {
+    name: "How Funding Works",
+    href: "/education/courses/how-funding-works",
+    color: "#b24b33",
+    gradient: "to-[#b24b33]/40",
+    colorType: "hover:bg-course-how",
+    image: "/images/course3.png",
+  },
+  {
+    name: "Finding Investors",
+    href: "/education/courses/finding-investors",
+    color: "#a22626",
+    gradient: "to-[#a22626]/40",
+    colorType: "hover:bg-course-finding",
+    image: "/images/course4.png",
+  },
+
+  {
+    name: "Pitch Deck Bootcamp",
+    href: "/education/courses/pitch-deck-bootcamp",
+    para: "This course will guide you through defining the key information you'll need to build a Pitch Deck for your startup.",
+    color: "#723e7b",
+    gradient: "to-[#723e7b]/40",
+    colorType: "hover:bg-course-pitch",
+    image: "/images/course5.png",
+  },
+  {
+    name: "Pitching Investors",
+    href: "/education/courses/pitching-investors",
+    color: "#206096",
+    gradient: "to-[#206096]/40",
+    colorType: "hover:bg-course-pitching",
+    image: "/images/course6.png",
+  },
+  {
+    name: "Product MVP",
+    href: "/education/courses/product-mvp",
+    color: "#138b66",
+    gradient: "to-[#138b66]/40",
+    colorType: "hover:bg-course-product",
+    image: "/images/course1.png",
+  },
+];
+
 export const navItems = [
   {
     name: "Home",
@@ -27,16 +81,7 @@ export const navItems = [
         name: "Courses",
         icon: GraduationCap,
         href: "/education/courses",
-        items: [
-          {
-            name: "Web Development",
-            href: "/education/courses/web",
-          },
-          {
-            name: "AI / ML",
-            href: "/education/courses/ai",
-          },
-        ],
+        items: courses,
       },
       {
         name: "Articles",
@@ -130,35 +175,5 @@ export const navItems1 = [
   {
     name: "Login",
     href: "/login",
-  },
-];
-
-export const courses = [
-  {
-    name: "Finding Investors",
-    href: "/education/courses/finding-investors",
-    color: "#118A8B",
-  },
-  {
-    name: "How Funding Works",
-    href: "/education/courses/how-funding-works",
-  },
-  {
-    name: "Pitch Deck Bootcamp",
-    href: "/education/courses/pitch-deck-bootcamp",
-    para: "This course will guide you through defining the key information you'll need to build a Pitch Deck for your startup.",
-  },
-  {
-    name: "Pitching Investors",
-    href: "/education/courses/pitching-investors",
-  },
-  {
-    name: "Product MVP",
-    href: "/education/courses/product-mvp",
-  },
-  {
-    name: "Idea Validation Bootcamp",
-    href: "/education/courses/idea-validation-bootcamp",
-    para: "This course will walk you through the steps to evaluate your startup idea: research, expert validation, customer discovery, and crafting an elevator pitch.",
   },
 ];

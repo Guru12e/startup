@@ -40,40 +40,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}
-
-@layer base {
-  body {
-    font-family: var(--font-poppins);
-    background: #1f2128;
-  }
-
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
-    display: none;
-    width: 0;
-  }
-
-  html,
-  body {
-    scrollbar-width: none;
-  }
-
-  html,
-  body {
-    -ms-overflow-style: none;
-    width: 100vw;
-    overflow-x: hidden;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .no-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+  --color-course-finding: var(--course-finding);
+  --color-course-how: var(--course-how);
+  --color-course-pitch: var(--course-pitch);
+  --color-course-pitching: var(--course-pitching);
+  --color-course-product: var(--course-product);
+  --color-course-idea: var(--course-idea);
 }
 
 :root {
@@ -109,6 +81,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --course-finding: #118a8b;
+  --course-funding: #b24b33;
+  --course-pitch: #723e7b;
+  --course-pitching: #206096;
+  --course-product: #138b66;
+  --course-idea: #10898b;
 }
 
 .dark {
@@ -143,6 +121,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --course-finding: #118a8b;
+  --course-funding: #b24b33;
+  --course-pitch: #723e7b;
+  --course-pitching: #206096;
+  --course-product: #138b66;
+  --course-idea: #10898b;
 }
 
 @layer base {
@@ -151,5 +135,57 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  body {
+    font-family: var(--font-poppins);
+    background: #1f2128;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+
+  html,
+  body {
+    scrollbar-width: none;
+  }
+
+  html,
+  body {
+    -ms-overflow-style: none;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .design-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .design-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .design-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #555473;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .design-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #555473 transparent;
   }
 }

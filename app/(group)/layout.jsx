@@ -28,7 +28,7 @@ export default function SubRootLayout({ children }) {
       <SidebarProvider>
         <AppSidebar />
         <SidebarInset>
-          <header className="flex h-16 shrink-0 bg-[#1F2128] items-center gap-2">
+          <div className="overflow-y-scroll design-scrollbar h-screen mt-2"><header className="flex h-16 shrink-0 bg-[#1F2128] items-center gap-2">
             <div className="flex items-center gap-2 px-4">
               <SidebarTrigger className="-ml-1" />
               <Separator
@@ -68,7 +68,7 @@ export default function SubRootLayout({ children }) {
             </div>
           </header>
 
-          <div className="w-full relative overflow-hidden">{children}</div>
+          <div className="w-full relative overflow-x-hidden">{children}</div></div>
         </SidebarInset>
       </SidebarProvider>
     </div>
